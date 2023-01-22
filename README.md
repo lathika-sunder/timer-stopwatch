@@ -1,1 +1,1 @@
-# Timer StopWatch
+# Timer & Stopwatch
