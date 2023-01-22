@@ -1,4 +1,8 @@
 # Timer & Stopwatch
+
+Thesa webpagees are of parallax design and has interesting CSS and Javascript programmed to create a Digital Timer and Stopwatch.
+The program files are attached in this folder.
+
 # Output
 
 
