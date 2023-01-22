@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Digital Timer & Stopwatch</title>
+    </head>
+
+    <style>
+
+        body{
+            overflow-x: visible;
+
+        }
+
+        .paralax{
+            position :absolute;
+            height: 100%;
+
+        }
+
+        .paralax-item{
+            position: fixed;
+            width:100%;
+            height: 100%;
+            top:0;
+            left:0;
+        }
+        
+
+        .p-item1{
+            background: url("m_1.png") center/cover no-repeat;
+        }
+
+        .p-item3{
+            background: url("m_3.png") bottom/100% no-repeat;
+          background-position: center;
+          
+            z-index: 2;
+            
+        }
+
+        .p-item3 a{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 1em 1.5em;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .p-item3 img{
+            size: 30%;
+            max-width: 55%;
+            margin-left: 420px;
+        }
+
+        .p-item4{
+            position: absolute;
+            top:0;
+            left:0;
+            width:10000%;
+            height:100%;
+            content:'';
+            background: url("fog_2.png") repeat-x;
+            background-size: contain;
+            background-position: center;
+            animation: marquee 20s linear infinite;
+        }
+
+
+.p-item4::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000%;
+    height: 100%;
+    content: '';
+    background: url("fog_2.png") rep;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 20s linear infinite;
+    z-index:1;
+}
+        @keyframes marquee{
+            0%{
+                transform:translate3d(0,0,0);
+            }
+            100%{
+                transform:translate3d(-200vw,0,0);
+            }
+
+        }
+
+        .container{
+            position: relative;
+            z-index: 1;
+           
+            max-width:1140px;
+            margin:0 auto;
+            margin-top: 100vh;
+        }
+
+        .content-header
+        {
+          
+            font-family: sans-serif;
+            color: white;
+            text-align: center !important;
+            text-transform: uppercase;
+            margin-left: 190px;
+            margin-right: -20%;
+        }
+
+        .content-header h1{
+            font-size:110px;
+            font-weight: 600;
+            
+            margin-bottom: -40px;
+            text-align: center;
+        
+            color: #fff;
+            letter-spacing: -7px;
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: blur 5s ease-out infinite;
+            text-shadow: 0px 0px 5px rgb(127, 192, 253), 0px 0px 7px rgb(3, 9, 178);
+        }
+
+
+        @keyframes blur {
+            from {
+              text-shadow:0px 0px 10px #fff,
+                0px 0px 10px #fff, 
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 50px #fff,
+                0px 0px 50px rgb(83, 174, 199),
+                0px 0px 50px #8fbaef,
+                0px 0px 150px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px -10px 100px #7B96B8,
+                0px -10px 100px #7B96B8;
+            }
+        }
+
+        .content-header h2{
+            font-size: 35px;
+            font-weight: 500;
+            color: white;
+            padding-top: 40px;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%; 
+            right: 50%;
+            transform: translate(50%,-50%);
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           margin-right:-380px;
+            font-size: 2em;
+            font-weight: 700;
+            color: #f5f5f5;
+            text-shadow: 1px 1px 1px #919191,
+            1px 18px 6px rgba(16,16,16,0.4),
+            1px 22px 10px rgba(16,16,16,0.2),
+            1px 25px 35px rgba(16,16,16,0.2),
+            1px 30px 60px rgba(16,16,16,0.4);
+            background-color: black;
+            box-shadow: 3px 3px 3px black;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .text p{
+            font-size: 50%;
+        }
+
+        .content {
+            max-width:10px;
+    
+            margin-right: 50px;
+        }
+        .content img{
+            max-width:700px;
+    
+            margin-right: 50px;
+        }
+
+        
+        .clock{
+            position: relative;
+            z-index: 5;
+            
+            max-width:1140px;
+            margin:0 auto;
+   
+        }
+
+        .time
+        {
+           
+            font-family: sans-serif;
+            color: rgb(8, 54, 181);
+            text-align: center !important;
+            text-transform: uppercase;
+            margin-left: 240px;
+            margin-right: -20%;
+        }
+
+        .time{
+            font-size:110px;
+            font-weight: 600;
+            
+            margin-bottom: -40px;
+            text-align: center;
+        
+            color: #fff;
+            letter-spacing: -7px;
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: blur 2.5s ease-out infinite;
+            text-shadow: 0px 0px 5px rgb(127, 192, 253), 0px 0px 7px rgb(3, 9, 178);
+        }
+
+
+        @keyframes blur {
+            from {
+              text-shadow:0px 0px 10px #fff,
+                0px 0px 10px #fff, 
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 25px #fff,
+                0px 0px 50px #fff,
+                0px 0px 50px rgb(83, 174, 199),
+                0px 0px 50px #8fbaef,
+                0px 0px 150px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px 10px 100px #7B96B8,
+                0px -10px 100px #7B96B8,
+                0px -10px 100px #7B96B8;
+            }
+        }
+
+        .day-time{
+            font-size: 35px;
+            font-weight: 500;
+            color: white;
+            padding-top: 40px;
+        }
+        
+       
+    </style>
+    <body>
+     
+        <div class="paralax">
+            
+            <div class="paralax-item p-item1"></div>
+            <div class="paralax-item p-item2"></div>
+            <div class="paralax-item p-item3"> 
+                <a href="stopwatch.html">Click to Use Stopwatch</a>
+             </div></div>
+            <div class="paralax-item p-item4"></div>
+        </div>
+       
+        <div class="container">
+           
+            <div class="content-header">
+                <h1>DIGITAL CLOCK</h1>
+                
+                <div class="text">
+                    <h3>Created by LATHIKA SUNDER</h3>
+                    <p >Parallax Webpage using HTML5,CSS & JavaScript</p>
+                    </div> 
+
+                <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">A simple timer</h2>
+                
+                <div class="clock" >
+                 <div class="time">
+                    <div class="date-time"></div>
+                 </div>
+                
+                </div>
+                
+            </div>
+
+           
+            
+
+         <div class="content">
+            <img src="astro.png" alt="robot">
+           </div>
+         
+           
+                
+        </div>
+        
+        </div>
+        
+<script src="script.js"></script>
+        <script src="paralax.js"></script>
+        <script src="stopwatch.js"></script>
+    </body>
+</html>
